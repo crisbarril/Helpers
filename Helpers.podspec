@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
  s.name = "Helpers"
- s.version = "0.0.1"
+ s.version = "0.0.2"
  s.summary = "Helpers Framework"
  s.description = "Framework with helpers objects"
  s.homepage = "https://github.com/crisbarril/Helpers"
@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
 
  s.subspec 'Style' do |ss|
   ss.dependency 'Helpers/Utility'
-  ss.source_files  = "Helpers/Style/**/*.{swift,json}"
+  ss.source_files  = "Helpers/Style/**/*.swift"
+  ss.resources = "Helpers/Style/**/*.json"
  end
 
  s.subspec 'Utility' do |ss|
