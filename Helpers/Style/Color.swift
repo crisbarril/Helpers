@@ -9,9 +9,9 @@
 import UIKit
 
 public struct Color {
-    var strength: String
-    var hex: String
-    var contrast: UIColor {
+    public var strength: String
+    public var hex: String
+    public var contrast: UIColor {
         get {
             return contrastValue == .black ? UIColor.black : UIColor.white
         }
@@ -19,16 +19,16 @@ public struct Color {
     
     private var contrastValue: Contrast
     
-    var value: UIColor {
+    public var value: UIColor {
         return UIColor(hexString: hex, alpha: 1.0)
     }
         
-    func alpha(_ value: CGFloat) -> UIColor {
+    public func alpha(_ value: CGFloat) -> UIColor {
         return UIColor(hexString: hex, alpha: value)
     }
 }
 
-enum Contrast: String {
+public enum Contrast: String {
     case black
     case white
 }

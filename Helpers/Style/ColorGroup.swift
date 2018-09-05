@@ -8,10 +8,10 @@
 
 import Foundation
 
-internal struct ColorGroup {
-    let key: Palette
-    let defaultShade: Color
-    let shades: [Color]
+public  struct ColorGroup {
+    public let key: Palette
+    public let defaultShade: Color
+    public let shades: [Color]
 }
 
 internal extension ColorGroup {

@@ -9,14 +9,14 @@
 import UIKit
 
 //Color manager
-public struct ColorPalette {
-    static var colors: [ColorGroup] = ColorPalette.initialize()
+public class ColorPalette {
+    static public var colors: [ColorGroup] = ColorPalette.initialize()
     
-    static var primary: Color = get(.red, strength: "50")
-    static var accent: Color = get(.red, strength: "50")
-    static var dark: Color = get(.red, strength: "50")
+    static public var primary: Color = get(.red, strength: "50")
+    static public var accent: Color = get(.red, strength: "50")
+    static public var dark: Color = get(.red, strength: "50")
     
-    static func get(_ color: Palette, strength: String? = nil) -> Color {
+    static public func get(_ color: Palette, strength: String? = nil) -> Color {
         let colorInfo = colors.first { (colorData) -> Bool in
             return colorData.key == color
         }
@@ -34,7 +34,7 @@ public struct ColorPalette {
         return colorGroup.defaultShade
     }
     
-    static func custom(hexString: String, contrast: Contrast) -> Color {
+    static public func custom(hexString: String, contrast: Contrast) -> Color {
         return Color(hex: hexString, contrast: contrast)
     }
 }
@@ -50,8 +50,8 @@ extension ColorPalette {
         var colors = [ColorGroup]()
         
         do {
-            let jsonData = try Utility.read(fileName: "ColorPalette", fileType: .json)
-
+            let jsonData = try Utility.read(fileName: "ColorPalette", fileType: .json, bundle: Bundle(for: ColorPalette.self))
+            
             if let json = jsonData as? [String:Any], let colorArray = json[Key.colorArray] as? [[String: Any]] {
                 
                 for obj in colorArray {
