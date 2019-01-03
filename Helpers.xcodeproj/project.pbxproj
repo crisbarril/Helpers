@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403996A821DE9E650069D7C3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996A721DE9E650069D7C3 /* Device.swift */; };
+		403996AC21DEA01D0069D7C3 /* iOSScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996AB21DEA01D0069D7C3 /* iOSScreen.swift */; };
+		403996AE21DEA0250069D7C3 /* watchOSScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996AD21DEA0250069D7C3 /* watchOSScreen.swift */; };
 		4054EB3E214056D900740BE8 /* Helpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4054EB34214056D800740BE8 /* Helpers.framework */; };
 		4054EB43214056D900740BE8 /* HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB42214056D900740BE8 /* HelpersTests.swift */; };
 		4054EB45214056D900740BE8 /* Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4054EB37214056D800740BE8 /* Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403996A721DE9E650069D7C3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		403996AB21DEA01D0069D7C3 /* iOSScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSScreen.swift; sourceTree = "<group>"; };
+		403996AD21DEA0250069D7C3 /* watchOSScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchOSScreen.swift; sourceTree = "<group>"; };
 		4054EB34214056D800740BE8 /* Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Helpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4054EB37214056D800740BE8 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		4054EB38214056D800740BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +72,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		403996A621DE9E2E0069D7C3 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				403996A721DE9E650069D7C3 /* Device.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		403996A921DE9FC30069D7C3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				403996B121DEA2280069D7C3 /* Device */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		403996AA21DE9FD10069D7C3 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				403996B021DEA2200069D7C3 /* Device */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
+		403996AF21DEA15D0069D7C3 /* MultiPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				403996A621DE9E2E0069D7C3 /* Device */,
+				4054EB59214056EE00740BE8 /* Error */,
+				4054EB50214056ED00740BE8 /* Style */,
+				4054EB4E214056ED00740BE8 /* Utility */,
+			);
+			path = MultiPlatform;
+			sourceTree = "<group>";
+		};
+		403996B021DEA2200069D7C3 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				403996AD21DEA0250069D7C3 /* watchOSScreen.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		403996B121DEA2280069D7C3 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				403996AB21DEA01D0069D7C3 /* iOSScreen.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		4054EB2A214056D800740BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +144,9 @@
 		4054EB36214056D800740BE8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4054EB59214056EE00740BE8 /* Error */,
-				4054EB50214056ED00740BE8 /* Style */,
-				4054EB4E214056ED00740BE8 /* Utility */,
+				403996AF21DEA15D0069D7C3 /* MultiPlatform */,
+				403996AA21DE9FD10069D7C3 /* watchOS */,
+				403996A921DE9FC30069D7C3 /* iOS */,
 				4054EB37214056D800740BE8 /* Helpers.h */,
 				4054EB38214056D800740BE8 /* Info.plist */,
 			);
@@ -258,6 +315,9 @@
 				4054EB6E2140576800740BE8 /* Palette.swift in Sources */,
 				4054EB6D2140576800740BE8 /* Color.swift in Sources */,
 				4054EB6C2140576800740BE8 /* ColorGroup.swift in Sources */,
+				403996A821DE9E650069D7C3 /* Device.swift in Sources */,
+				403996AC21DEA01D0069D7C3 /* iOSScreen.swift in Sources */,
+				403996AE21DEA0250069D7C3 /* watchOSScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
