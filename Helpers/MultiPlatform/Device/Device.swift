@@ -8,24 +8,10 @@
 
 import Foundation
 
-public enum Platforms {
-    case iOS, watchOS
-}
-
 protocol ScreenProtocol {
     var bounds: CGRect { get }
 }
 
 public struct Device {
     
-    let screen: ScreenProtocol
-    
-    init(for platform: Platforms) {
-        switch platform {
-        case .iOS:
-            screen = iOSScreen()
-        case .watchOS:
-            screen = watchOSScreen()
-        }
-    }
 }

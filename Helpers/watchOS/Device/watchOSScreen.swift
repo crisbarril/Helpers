@@ -13,3 +13,10 @@ struct watchOSScreen: ScreenProtocol {
         return WKInterfaceDevice.current().screenBounds
     }
 }
+
+extension Device {
+    
+    var watchScreen: ScreenProtocol {
+        return watchOSScreen()
+    }
+}
