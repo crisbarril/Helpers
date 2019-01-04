@@ -8,10 +8,25 @@
 
 import CoreGraphics
 
-protocol ScreenProtocol {
+public protocol ScreenProtocol {
     var bounds: CGRect { get }
 }
 
 public struct Device {
     
+    public init() {
+        
+    }
+    
+    public var screen: ScreenProtocol {
+        #if os(iOS)
+        
+        return iOSScreen()
+        
+        #elseif os(watchOS)
+        
+        return watchOSScreen()
+        
+        #endif
+    }
 }

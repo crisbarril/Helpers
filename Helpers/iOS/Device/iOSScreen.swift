@@ -13,10 +13,3 @@ struct iOSScreen: ScreenProtocol {
         return UIScreen.main.bounds
     }
 }
-
-extension Device {
-    
-    var screen: ScreenProtocol {
-        return iOSScreen()
-    }
-}
