@@ -6,7 +6,7 @@
 //  Copyright © 2019 Cristian Barril. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 protocol ScreenProtocol {
     var bounds: CGRect { get }
