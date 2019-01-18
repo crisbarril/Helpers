@@ -50,7 +50,7 @@ extension ColorPalette {
         var colors = [ColorGroup]()
         
         do {
-            let jsonData = try Utility.read(fileName: "ColorPalette", fileType: .json, bundle: Bundle(for: ColorPalette.self))
+            let jsonData = try Utility().read(fileName: "ColorPalette", fileType: .json, bundle: Bundle(for: ColorPalette.self))
             
             if let json = jsonData as? [String:Any], let colorArray = json[Key.colorArray] as? [[String: Any]] {
                 

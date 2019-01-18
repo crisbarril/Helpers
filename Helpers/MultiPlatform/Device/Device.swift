@@ -8,8 +8,13 @@
 
 import CoreGraphics
 
-public protocol ScreenProtocol {
-    var bounds: CGRect { get }
+public protocol DeviceProtocol {
+    
+    var screenBounds: CGRect { get }
+    
+    func recoverMainView<ViewClass>() -> ViewClass?
+    
+    func showAlert(info: AlertViewInfo)
 }
 
 public struct Device {
@@ -18,14 +23,14 @@ public struct Device {
         
     }
     
-    public var screen: ScreenProtocol {
+    public var current: DeviceProtocol {
         #if os(iOS)
         
-        return iOSScreen()
+        return iOSDevice()
         
         #elseif os(watchOS)
         
-        return watchOSScreen()
+        return watchOSDevice()
         
         #endif
     }

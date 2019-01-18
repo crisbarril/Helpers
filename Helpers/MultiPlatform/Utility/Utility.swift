@@ -15,7 +15,11 @@ public enum SupportedFiles: String {
 
 public struct Utility {
     
-    public static func read(fileName: String, fileType: SupportedFiles, bundle: Bundle = Bundle.main) throws -> Any? {
+    public init() {
+        
+    }
+    
+    public func read(fileName: String, fileType: SupportedFiles, bundle: Bundle = Bundle.main) throws -> Any? {
         
         if let path = bundle.path(forResource: fileName, ofType: fileType.rawValue) {
             do {
@@ -25,7 +29,7 @@ public struct Utility {
                 return parsedData
                 
             } catch {
-                throw ErrorFactory.create(withKey: "Fail to recover data", failureReason: "Fail to recover data from \(path).", domain: "Utility")
+                throw ErrorFactory.create(withKey: "Fail to recover data from file: \(fileName)", failureReason: error.localizedDescription, domain: "Utility")
             }
         }
         else {
@@ -33,7 +37,23 @@ public struct Utility {
         }
     }
     
-    public static func parse(_ data: Data, fileType: SupportedFiles) -> Any? {
+    public func write(content: String, fileName: String, fileType: SupportedFiles, bundle: Bundle = Bundle.main) throws {
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent("\(fileName)\(fileType.rawValue)")
+            
+            //writing
+            do {
+                try content.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {
+                throw ErrorFactory.create(withKey: "Fail to write data in file: \(fileName)\(fileType.rawValue)", failureReason: error.localizedDescription, domain: "Utility")
+            }
+        }
+    }
+    
+    public func parse(_ data: Data, fileType: SupportedFiles) -> Any? {
         switch fileType {
         case .json:
             return try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
@@ -41,4 +61,6 @@ public struct Utility {
             return nil
         }
     }
+    
+    
 }

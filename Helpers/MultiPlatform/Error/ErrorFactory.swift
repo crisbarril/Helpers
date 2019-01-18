@@ -13,6 +13,7 @@ public struct ErrorFactory {
         var dict = [String: AnyObject]()
         dict[NSLocalizedDescriptionKey] = key as AnyObject
         dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject
+        
         return NSError(domain: domain, code: code, userInfo: dict)
     }
 }
