@@ -85,6 +85,13 @@ public struct Utility {
         }
     }
     
+    public func delete(fileName: String, fileType: SupportedFiles) throws {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent("\(fileName)\(fileType.rawValue)")
+            try FileManager.default.removeItem(at: fileURL)
+        }
+    }
+    
     //MARK: Private funcs
     
     private func urlFromBundle(fileName: String, fileType: SupportedFiles, bundle: Bundle) -> URL? {
