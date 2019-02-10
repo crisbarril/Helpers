@@ -9,16 +9,29 @@
 import Foundation
 
 public struct AlertViewInfo {
-    let title: String = ""
-    let message: String = ""
+    var title: String = ""
+    var message: String = ""
     let style: AlertViewStyle
     let actions: [AlertActionInfo]
+    
+    public init(title: String, message: String, style: AlertViewStyle, actions: [AlertActionInfo]) {
+        self.title = title
+        self.message = message
+        self.style = style
+        self.actions = actions
+    }
 }
 
 public struct AlertActionInfo {
-    let title: String = ""
+    var title: String = ""
     let style: AlertActionStyle
-    let action: (() -> Void)
+    let action: (() -> Void)?
+    
+    public init(title: String, style: AlertActionStyle, action: (() -> Void)? ) {
+        self.title = title
+        self.style = style
+        self.action = action
+    }
 }
 
 public enum AlertActionStyle : Int {

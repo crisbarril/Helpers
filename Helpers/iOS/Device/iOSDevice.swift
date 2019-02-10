@@ -29,7 +29,9 @@ struct iOSDevice: DeviceProtocol {
             let actionStyle = recoverAlertActionStyle(customStyle: actionInfo.style)
             
             alert.addAction(UIAlertAction(title: actionInfo.title, style: actionStyle, handler: { action in
-                actionInfo.action()
+                if let action = actionInfo.action {
+                    action()
+                }
             }))
         }
         

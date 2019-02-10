@@ -27,7 +27,9 @@ struct watchOSDevice: DeviceProtocol {
             let actionStyle = recoverAlertActionStyle(customStyle: actionInfo.style)
             
             let action = WKAlertAction(title: actionInfo.title, style: actionStyle) {
-                actionInfo.action()
+                if let action = actionInfo.action {
+                    action()
+                }
             }
             
             actions.append(action)
