@@ -21,7 +21,7 @@ public class ColorPalette {
             return colorData.key == color
         }
         
-        guard let colorGroup = colorInfo else { return custom(hexString: "#000000", contrast: .white) }
+        guard let colorGroup = colorInfo else { return custom(hexString: "", contrast: .none) }
         
         if let colorStrength = strength {
             let selectedColor = colorGroup.shades.first { (data) -> Bool in

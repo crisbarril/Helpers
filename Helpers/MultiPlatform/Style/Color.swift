@@ -13,6 +13,10 @@ public struct Color {
     public var hex: String
     public var contrast: UIColor {
         get {
+            guard contrastValue != .none else {
+                return UIColor(white: 0, alpha: 0)
+            }
+            
             return contrastValue == .black ? UIColor.black : UIColor.white
         }
     }
@@ -20,6 +24,10 @@ public struct Color {
     private var contrastValue: Contrast
     
     public var value: UIColor {
+        guard hex != "" else {
+            return UIColor(white: 0, alpha: 0)
+        }
+        
         return UIColor(hexString: hex, alpha: 1.0)
     }
         
@@ -29,8 +37,7 @@ public struct Color {
 }
 
 public enum Contrast: String {
-    case black
-    case white
+    case black, white, none
 }
 
 extension Color {
