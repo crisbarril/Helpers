@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B943DAC250D467400040142 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B943DAB250D467400040142 /* CustomColor.swift */; };
 		403996A821DE9E650069D7C3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996A721DE9E650069D7C3 /* Device.swift */; };
 		403996AC21DEA01D0069D7C3 /* iOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996AB21DEA01D0069D7C3 /* iOSDevice.swift */; };
 		4054EB3E214056D900740BE8 /* Helpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4054EB34214056D800740BE8 /* Helpers.framework */; };
@@ -17,7 +18,6 @@
 		4054EB6A2140576800740BE8 /* ColorPalette.json in Resources */ = {isa = PBXBuildFile; fileRef = 4054EB632140576800740BE8 /* ColorPalette.json */; };
 		4054EB6B2140576800740BE8 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB642140576800740BE8 /* ColorPalette.swift */; };
 		4054EB6C2140576800740BE8 /* ColorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB652140576800740BE8 /* ColorGroup.swift */; };
-		4054EB6D2140576800740BE8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB662140576800740BE8 /* Color.swift */; };
 		4054EB6E2140576800740BE8 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB672140576800740BE8 /* Palette.swift */; };
 		4054EB6F2140576800740BE8 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB692140576800740BE8 /* UIColor+RGB.swift */; };
 		40E9491A21F1285600FDC0CA /* HelpersWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E9491821F1285600FDC0CA /* HelpersWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B943DAB250D467400040142 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		403996A721DE9E650069D7C3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		403996AB21DEA01D0069D7C3 /* iOSDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDevice.swift; sourceTree = "<group>"; };
 		403996AD21DEA0250069D7C3 /* watchOSDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchOSDevice.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		4054EB632140576800740BE8 /* ColorPalette.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ColorPalette.json; sourceTree = "<group>"; };
 		4054EB642140576800740BE8 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		4054EB652140576800740BE8 /* ColorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGroup.swift; sourceTree = "<group>"; };
-		4054EB662140576800740BE8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4054EB672140576800740BE8 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		4054EB692140576800740BE8 /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		40E9491621F1285600FDC0CA /* HelpersWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HelpersWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +191,7 @@
 		4054EB50214056ED00740BE8 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				4054EB662140576800740BE8 /* Color.swift */,
+				1B943DAB250D467400040142 /* CustomColor.swift */,
 				4054EB652140576800740BE8 /* ColorGroup.swift */,
 				4054EB632140576800740BE8 /* ColorPalette.json */,
 				4054EB642140576800740BE8 /* ColorPalette.swift */,
@@ -329,6 +329,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4054EB2A214056D800740BE8;
 			productRefGroup = 4054EB35214056D800740BE8 /* Products */;
@@ -378,9 +379,9 @@
 				4054EB6B2140576800740BE8 /* ColorPalette.swift in Sources */,
 				4054EB6E2140576800740BE8 /* Palette.swift in Sources */,
 				40E9492221F13EB900FDC0CA /* AlertView.swift in Sources */,
-				4054EB6D2140576800740BE8 /* Color.swift in Sources */,
 				4054EB6C2140576800740BE8 /* ColorGroup.swift in Sources */,
 				403996A821DE9E650069D7C3 /* Device.swift in Sources */,
+				1B943DAC250D467400040142 /* CustomColor.swift in Sources */,
 				403996AC21DEA01D0069D7C3 /* iOSDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.Helpers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -579,7 +580,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.Helpers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -598,7 +599,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.HelpersTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -617,7 +618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.HelpersTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -645,7 +646,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
@@ -673,7 +674,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};

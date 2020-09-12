@@ -55,8 +55,8 @@ struct iOSDevice: DeviceProtocol {
         return style
     }
     
-    private func recoverAlertActionStyle(customStyle: AlertActionStyle) -> UIAlertActionStyle {
-        var style: UIAlertActionStyle = .default
+    private func recoverAlertActionStyle(customStyle: AlertActionStyle) -> UIAlertAction.Style {
+        var style: UIAlertAction.Style = .default
         switch customStyle {
         
         case .default:

@@ -10,8 +10,8 @@ import Foundation
 
 public  struct ColorGroup {
     public let key: Palette
-    public let defaultShade: Color
-    public let shades: [Color]
+    public let defaultShade: CustomColor
+    public let shades: [CustomColor]
 }
 
 internal extension ColorGroup {
@@ -27,7 +27,7 @@ internal extension ColorGroup {
         guard let groupKey = json[Key.key] as? String,
             let keyPalette = Palette(rawValue: groupKey),
             let defaultShadeData = json[Key.defaultShade] as? [String: Any],
-            let defaultShade = Color(json: defaultShadeData),
+            let defaultShade = CustomColor(json: defaultShadeData),
             let shadesArray = json[Key.shades] as? [[String: Any]]
             
             else {
@@ -37,10 +37,10 @@ internal extension ColorGroup {
         self.key = keyPalette
         self.defaultShade = defaultShade
         
-        var shadesTemp = [Color]()
+        var shadesTemp = [CustomColor]()
         
         for obj in shadesArray {
-            if let color = Color(json: obj) {
+            if let color = CustomColor(json: obj) {
                 shadesTemp.append(color)
             }
         }

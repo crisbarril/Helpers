@@ -2,18 +2,18 @@
 Pod::Spec.new do |s|
 
  s.name = "Helpers"
- s.version = "0.0.7"
+ s.version = "0.0.8"
  s.summary = "Helpers Framework"
  s.description = "Framework with helpers objects"
  s.homepage = "https://github.com/crisbarril/Helpers"
  s.license = { :type => 'MIT', :file => 'LICENSE' }
  s.platform = :ios, '11.0'
  s.author = { "Cristian Barril" => "crisbarril@hotmail.com" }
- s.swift_version = '4.0'
+ s.swift_version = '5.0'
  
  # Platforms
- s.ios.deployment_target = '10.0'
- s.watchos.deployment_target = '4.0'
+ s.ios.deployment_target = '12.0'
+ s.watchos.deployment_target = '6.0'
 
  # Source
  s.source = { :git => "https://github.com/crisbarril/Helpers.git", :tag => s.version }

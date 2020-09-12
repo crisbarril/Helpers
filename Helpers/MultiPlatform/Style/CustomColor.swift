@@ -8,9 +8,10 @@
 
 import UIKit
 
-public struct Color {
+public struct CustomColor {
     public var strength: String
     public var hex: String
+    public var alpha: CGFloat
     public var contrast: UIColor {
         get {
             guard contrastValue != .none else {
@@ -28,11 +29,11 @@ public struct Color {
             return UIColor(white: 0, alpha: 0)
         }
         
-        return UIColor(hexString: hex, alpha: 1.0)
+        return UIColor(hexString: hex, alpha: alpha)
     }
         
-    public func alpha(_ value: CGFloat) -> UIColor {
-        return UIColor(hexString: hex, alpha: value)
+    public func alpha(_ value: CGFloat) -> CustomColor {
+        return CustomColor(hex: hex, alpha: value, contrast: contrastValue)
     }
 }
 
@@ -40,7 +41,7 @@ public enum Contrast: String {
     case black, white, none
 }
 
-extension Color {
+extension CustomColor {
     
     private enum Key  {
         static let strength = "strength"
@@ -62,11 +63,13 @@ extension Color {
         self.strength = strengthValue
         self.hex = hexValue
         self.contrastValue = contrast
+        self.alpha = 1.0
     }
     
-    init(hex: String, contrast: Contrast) {
+    init(hex: String, alpha: CGFloat = 1.0, contrast: Contrast) {
         self.strength = "0"
         self.contrastValue = contrast
+        self.alpha = alpha
         self.hex = hex
     }
 }

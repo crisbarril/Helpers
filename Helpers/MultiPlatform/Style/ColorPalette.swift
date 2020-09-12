@@ -12,16 +12,16 @@ import UIKit
 public class ColorPalette {
     static public var colors: [ColorGroup] = ColorPalette.initialize()
     
-    static public var primary: Color = get(.red, strength: "50")
-    static public var accent: Color = get(.red, strength: "50")
-    static public var dark: Color = get(.red, strength: "50")
+    static public var primary: CustomColor = get(.red, strength: "50")
+    static public var accent: CustomColor = get(.red, strength: "50")
+    static public var dark: CustomColor = get(.red, strength: "50")
     
-    static public func get(_ color: Palette, strength: String? = nil) -> Color {
+    static public func get(_ color: Palette, strength: String? = nil) -> CustomColor {
         let colorInfo = colors.first { (colorData) -> Bool in
             return colorData.key == color
         }
         
-        guard let colorGroup = colorInfo else { return custom(hexString: "", contrast: .none) }
+        guard let colorGroup = colorInfo else { return custom(hexString: "", alpha: 1.0, contrast: .none) }
         
         if let colorStrength = strength {
             let selectedColor = colorGroup.shades.first { (data) -> Bool in
@@ -34,8 +34,8 @@ public class ColorPalette {
         return colorGroup.defaultShade
     }
     
-    static public func custom(hexString: String, contrast: Contrast) -> Color {
-        return Color(hex: hexString, contrast: contrast)
+    static public func custom(hexString: String, alpha: CGFloat = 1.0, contrast: Contrast) -> CustomColor {
+        return CustomColor(hex: hexString, alpha: alpha, contrast: contrast)
     }
 }
 
@@ -58,7 +58,7 @@ extension ColorPalette {
                 for obj in colorArray {
                     if let color = ColorGroup(json: obj) {
                         colors.append(color)
-                        print("New color group: \(color)")
+//                        print("New color group: \(color)")
                     }
                 }
             }
