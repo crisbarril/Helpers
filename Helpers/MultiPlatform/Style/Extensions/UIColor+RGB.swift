@@ -41,15 +41,14 @@ extension UIColor {
      - returns: UIColor from HexString
      */
     convenience init(hexString: String, alpha: CGFloat) {
-        
-        let hexString: String = (hexString as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
-        let scanner          = Scanner(string: hexString as String)
-        
+        var hexString: String = (hexString as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
         if hexString.hasPrefix("#") {
-            scanner.scanLocation = 1
+            hexString.removeFirst()
         }
-        var color: UInt32 = 0
-        scanner.scanHexInt32(&color)
+        
+        let scanner = Scanner(string: hexString as String)
+        var color: UInt64 = 0
+        scanner.scanHexInt64(&color)
         
         let mask = 0x000000FF
         let r = Int(color >> 16) & mask

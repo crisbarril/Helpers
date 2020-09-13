@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6C4A10250E9B24001D1327 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB692140576800740BE8 /* UIColor+RGB.swift */; };
+		1B6C4A11250E9C06001D1327 /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB5A214056EE00740BE8 /* ErrorFactory.swift */; };
+		1B6C4A12250E9C0F001D1327 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB642140576800740BE8 /* ColorPalette.swift */; };
+		1B6C4A13250E9C0F001D1327 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B943DAB250D467400040142 /* CustomColor.swift */; };
+		1B6C4A14250E9C0F001D1327 /* ColorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB652140576800740BE8 /* ColorGroup.swift */; };
+		1B6C4A15250E9C0F001D1327 /* ColorPalette.json in Resources */ = {isa = PBXBuildFile; fileRef = 4054EB632140576800740BE8 /* ColorPalette.json */; };
+		1B6C4A16250E9C1A001D1327 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB672140576800740BE8 /* Palette.swift */; };
+		1B6C4A17250E9C20001D1327 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054EB4F214056ED00740BE8 /* Utility.swift */; };
 		1B943DAC250D467400040142 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B943DAB250D467400040142 /* CustomColor.swift */; };
 		403996A821DE9E650069D7C3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996A721DE9E650069D7C3 /* Device.swift */; };
 		403996AC21DEA01D0069D7C3 /* iOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403996AB21DEA01D0069D7C3 /* iOSDevice.swift */; };
@@ -363,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6C4A15250E9C0F001D1327 /* ColorPalette.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,9 +407,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6C4A17250E9C20001D1327 /* Utility.swift in Sources */,
 				40E9492021F1288E00FDC0CA /* watchOSDevice.swift in Sources */,
+				1B6C4A13250E9C0F001D1327 /* CustomColor.swift in Sources */,
 				40E9491E21F1286C00FDC0CA /* Device.swift in Sources */,
+				1B6C4A16250E9C1A001D1327 /* Palette.swift in Sources */,
+				1B6C4A11250E9C06001D1327 /* ErrorFactory.swift in Sources */,
 				40E9492321F13EB900FDC0CA /* AlertView.swift in Sources */,
+				1B6C4A10250E9B24001D1327 /* UIColor+RGB.swift in Sources */,
+				1B6C4A12250E9C0F001D1327 /* ColorPalette.swift in Sources */,
+				1B6C4A14250E9C0F001D1327 /* ColorGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,14 +563,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Helpers/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.Helpers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -572,14 +591,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Helpers/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "Cristian-Barril.Helpers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -640,6 +662,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = crisbarril.HelpersWatch;
@@ -648,7 +671,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -669,6 +692,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.8;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = crisbarril.HelpersWatch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -676,7 +700,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
